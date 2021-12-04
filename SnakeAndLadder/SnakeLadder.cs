@@ -28,13 +28,20 @@ namespace SnakeAndLadder
         {
             Console.WriteLine("Game Started");
             Console.WriteLine("Player Position {0}", PlayerPosition);
-            RollADie();
-            CheckOptions();
+            while (true)
+            {
+                RollADie();
+                CheckOptions();
+                if (CheckWinner()) 
+                {
+                    break;
+                }
+            }
         }
         private void RollADie() 
         {
-            DieRolled = 5;
-            Console.WriteLine("Dice Rolled: {0}", DieRolled);
+            DieRolled = objRandom.Next(7);
+            Console.WriteLine("Dice Rolled: +{0}", DieRolled);
             PlayerPosition = PlayerPosition + DieRolled;
             Console.WriteLine("Player Position {0}", PlayerPosition);
         }
@@ -46,14 +53,28 @@ namespace SnakeAndLadder
             {
                 Console.WriteLine("Ladder: +{0}", DieRolled);
                 PlayerPosition = PlayerPosition + DieRolled;
+                Console.WriteLine("Player Position: {0}", PlayerPosition);
             }
             dictSnakes.TryGetValue(PlayerPosition, out snakeBite);
             if(snakeBite > 0)
             { 
                 Console.WriteLine("Snake Bite: -{0}",DieRolled);
                 PlayerPosition = PlayerPosition - DieRolled;
+                Console.WriteLine("Player Position: {0}", PlayerPosition);
             }
-            Console.WriteLine("Player Position: {0}", PlayerPosition);
+           
         }
+        public bool CheckWinner()
+        {
+            if (PlayerPosition >= 100)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
