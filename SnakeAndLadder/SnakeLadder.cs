@@ -17,7 +17,7 @@ namespace SnakeAndLadder
         public void StartGame()
         {
             Console.WriteLine("Game Started");
-            Console.WriteLine("Player Position{0}", PlayerPosition);
+            Console.WriteLine("Player Position {0}", PlayerPosition);
             RollADie();
         }
         private void RollADie() 
