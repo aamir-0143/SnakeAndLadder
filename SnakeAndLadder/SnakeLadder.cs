@@ -38,7 +38,7 @@ namespace SnakeAndLadder
                 }
             }
         }
-        private void RollADie() 
+        public void RollADie() 
         {
             DieRolled = objRandom.Next(7);
             Console.WriteLine("Dice Rolled: +{0}", DieRolled);
