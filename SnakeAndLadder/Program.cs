@@ -11,6 +11,7 @@ namespace SnakeAndLadder
             SnakeAndLadder.StartGame();
             SnakeAndLadder.ExactWinner();
             Console.WriteLine("Player Won");
+            Console.ReadKey();
 
         }
     }
