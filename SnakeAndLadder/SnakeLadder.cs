@@ -38,12 +38,12 @@ namespace SnakeAndLadder
                 }
                 Console.WriteLine("Player Position {0}", PlayerPosition);
                 CheckOptions();
-                if (ExactWinner()) 
+                if (ExactWinner())
                 {
                     Console.WriteLine("No of times dicerolled {0}", NoOfTimesDiceRolled);
                     break;
                 }
-               
+
             }
         }
         private void RollADie() 
